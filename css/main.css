@@ -94,45 +94,94 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
 html {
   background-color: #50514F;
   height: 100%;
+  width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'quicksand', sans-serif;
   padding: 2em;
   font-size: 1.25em;
-  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-  /*add display:flex and set justify-content to space-between*/
   font-weight: 400;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
+  max-width: 1200px;
+}
+
+header,
+footer {
+  width: 100%;
+  display: flex;
+}
+
+header {
+  position: relative;
+  justify-content: flex-end;
+}
+
+header::before {
+    content: "";
+    background: url('../img/woman-face2.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.8;
+}
+
+header h1 {
+  position: relative;
+  font-family: 'quicksand', sans-serif;
+  font-size: 2.25em;
+  color: #fff;
+}
+
+header h1 span {
+  color: #8CAE68;
+
+}
+main {
+  background-color: #50514F;
+  width: 100%;
+  color: #8CAE68;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #8CAE68;
+}
+
+main p{
+  font-size: 1.25em;
 }
 
 .div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
   line-height: 1.5em;
-  font-size: 1.25em;
-  height: 300px;
+  font-size: 1em;
+  text-align: justify;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  border-bottom: 2px solid #8CAE68;
 }
 
-.border-1, .border-2 {
-  border: 2px solid #8CAE68;
-  display: flex;
-  justify-content: space-between;
+footer {
+  justify-content: flex-start;
+  border-top: 2px solid #8CAE68;
 }
 
+footer a {
+  padding: 30px 20px 0 0;
+}
 
 
 
@@ -215,13 +264,31 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
 }
+
+
+@media all and (min-width: 1200px) {
+
+main {
+  border-bottom: 2px solid #8CAE68;
+  padding-bottom: 20px;
+}
+
+.div-1, .div-2, .div-3 {
+   flex-basis: 30%;
+   border-bottom: none;
+}
+
+.div-2 {
+   border-right: 2px solid #8CAE68;
+   border-left: 2px solid #8CAE68;
+   padding: 0 40px;
+}
+
 
 /* ==========================================================================
    Print styles.
